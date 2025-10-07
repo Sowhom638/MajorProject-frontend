@@ -77,7 +77,7 @@ function ProductListing() {
         <>
             <Header />
             <main className="container my-4">
-                <h2 className="my-4">Products</h2>
+                <h2 className="my-4">Products ({filteredProducts?.length || 0})</h2>
                 <div className="row">
                     <div className="col-md-2 my-1">
                         <div className="card">

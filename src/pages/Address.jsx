@@ -25,13 +25,13 @@ function Address() {
                 <div className="row">
                     {/* Form Column */}
                     <div className="col-lg-8 col-md-12 mb-4 mb-lg-0">
-                        {addresses.length > 0 && addresses.map(address => (
+                        {addresses.length > 0 ? addresses.map(address => (
                             <div className="card mb-3 d-flex align-items-center flex-row" key={address._id}>
                                 <input required className="form-check-input mt-0 mx-2" type="radio" name="address" value={`${address.firstName} ${address.lastName}  - ${address.street}, ${address.city}, ${address.district}, ${address.state}, ${address.zipcode}`}
                                     onChange={(e) => setSelectedAddress(e.target.value)} />
                                 <div className="card-body"><b>{address.firstName} {address.lastName}</b> - {address.street}, {address.city}, {address.district}, {address.state}, {address.zipcode}</div>
                             </div>
-                        ))}
+                        )) : <p className="text-muted">No saved addresses. Please add a new address.</p>}
                         <h2 className="my-4">Add New Address</h2>
                         <form onSubmit={(e) => {
                             e.preventDefault();
