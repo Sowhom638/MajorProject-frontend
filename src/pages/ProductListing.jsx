@@ -27,7 +27,7 @@ function ProductListing() {
                 }
             }
         }
-    }, [data, categoryId, products]);
+    }, [data, categoryId]);
 
     function handleSelectedCategory(e) {
         const { value, checked } = e.target;
@@ -55,23 +55,6 @@ function ProductListing() {
     }
 
     const allPossibleCategories = [...allCategories.map(cat => cat.name)];
-
-    // Loading and error states
-    if (loading && !data) {
-        return (
-            <div className="container my-4">
-                <p>Loading products...</p>
-            </div>
-        );
-    }
-
-    if (error) {
-        return (
-            <div className="container my-4">
-                <p>Error loading products: {error.message}</p>
-            </div>
-        );
-    }
 
     return (
         <>
@@ -157,6 +140,8 @@ function ProductListing() {
                         </div>
                     ) : (
                         <div className="col-md-10 my-1 d-flex justify-content-center align-items-center">
+                            {loading && <p>Loading...</p> }
+                            {error && <p>Error: {error.message}</p>}
                             <h3>No Products Found</h3>
                         </div>
                     )}

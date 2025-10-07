@@ -126,7 +126,12 @@ function CheckOut() {
             {loading && <p>Loading...</p>}
             {error && <p>Error: {error.message}</p>}
             <main className="container text-center my-5">
-                <b>Nothing is ordered</b>
+                <p><b>Nothing is ordered</b></p>
+                <Link to="/products/category/all"
+                                className="btn btn-outline-success px-4 py-2 fw-semibold"
+                            >
+                                Continue Shopping
+                            </Link>
             </main>
         </>
     );

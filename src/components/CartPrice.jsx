@@ -3,7 +3,7 @@ import useProductContext from '../context/ProductContext';
 import useFetch from "../../useFetch";
 import { useEffect } from "react";
 function CartPrice({ pageType }) {
-    const { finalPrice, setFinalPrice, selectedAddress, preservedCart, setPreservedCart, toggleIsCarted } = useProductContext();
+    const { finalPrice, setFinalPrice, selectedAddress, toggleIsCarted } = useProductContext();
     const { data: cartedProducts, loading, error } = useFetch(`${import.meta.env.VITE_API_URL}/products/cart/cartItems`);
     const navigate = useNavigate();
     let itemNumber = 0, totalPrice = 0, discount = 0, deliveryCharges = 0;
@@ -13,11 +13,6 @@ function CartPrice({ pageType }) {
 
         setFinalPrice(totalPrice - discount + deliveryCharges);
     }
-    useEffect(() => {
-        if (cartedProducts && Array.isArray(cartedProducts) && cartedProducts.length > 0) {
-            setPreservedCart([...cartedProducts, preservedCart]);
-        }
-    }, [cartedProducts]);
 
     // , preservedCart, getCartedProducts
     let linkDirection, linkContent;
@@ -58,7 +53,10 @@ function CartPrice({ pageType }) {
                 }
 
             });
-            cartedProducts?.products?.length > 0 && cartedProducts?.products?.forEach(product => { if (product.isCarted) toggleIsCarted(product._id) });
+            cartedProducts?.products?.length > 0 && cartedProducts?.products?.forEach(product => {
+                if (product.isCarted) toggleIsCarted(product._id)
+            });
+
         } catch (err) {
             console.error(err);
             alert(err.message);
