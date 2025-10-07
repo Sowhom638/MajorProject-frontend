@@ -1,9 +1,7 @@
 import { Link } from "react-router-dom";
-import useFetch from '../../useFetch';
 import useProductContext from "../context/ProductContext";
 
 function data() {
-    const { data, loading, error } = useFetch(`${import.meta.env.VITE_API_URL}/categories`);
     const {allCategories} = useProductContext();
     
     return data ? (
