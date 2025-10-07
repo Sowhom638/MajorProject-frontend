@@ -27,6 +27,18 @@ export function ProductProvider({ children }) {
     const [selectedAddress, setSelectedAddress] = useState('Not yet selected');
     const [search, setSearch] = useState("");
     const [finalPrice, setFinalPrice] = useState(0);
+    const [preservedCart, setPreservedCart] = useState(() => {
+        const saved = localStorage.getItem('preservedCart');
+        if (!saved || saved === "undefined") {
+            return [];
+        }
+        try {
+            return JSON.parse(saved);
+        } catch (e) {
+            console.warn("Failed to parse preservedCart from localStorage", e);
+            return [];
+        }
+    });
 
     // Fetch products
     const { data: productsData, loading: productsLoading, error: productsError } = useFetch(`${import.meta.env.VITE_API_URL}/products`);
@@ -38,6 +50,11 @@ export function ProductProvider({ children }) {
     const { data: addressesData, loading: addressesLoading, error: addressesError } = useFetch(`${import.meta.env.VITE_API_URL}/addresses`);
 
     const allCategories = categoriesData?.categories ? [...categoriesData.categories] : [];
+
+    // Persist preservedCart to localStorage
+    useEffect(() => {
+        localStorage.setItem('preservedCart', JSON.stringify(productsData?.product?.length > 0 ? [...productsData?.product?.filter(product => product.isCarted)] : []));
+    }, [preservedCart]);
 
     // Initialize products when data is available
     useEffect(() => {
@@ -272,6 +289,8 @@ export function ProductProvider({ children }) {
                 setSelectedAddress,
                 finalPrice,
                 setFinalPrice,
+                preservedCart,
+                setPreservedCart,
                 allCategories,
                 toggleIsCarted,
                 toggleIsWished,

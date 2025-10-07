@@ -3,10 +3,19 @@ import CartPrice from "../components/CartPrice";
 import Header from "../components/Header";
 import useProductContext from "../context/ProductContext";
 import useFetch from "../../useFetch";
+import { useEffect } from "react";
+
+import { useLocation } from 'react-router-dom';
 
 function CheckOut() {
+  const location = useLocation();
+  const { orderedItems, totalAmount, shippingAddress } = location.state || {};
+
     const { selectedAddress } = useProductContext();
     const { data: cartedProducts, loading, error } = useFetch(`${import.meta.env.VITE_API_URL}/products/cart/cartItems`);
+
+
+    
 
     const date = new Date();
     const formattedDate = date.toLocaleDateString('en-GB', {
@@ -17,7 +26,7 @@ function CheckOut() {
 
 
 
-    return cartedProducts ? (
+    return cartedProducts?.products?.length > 0 ? (
         <>
             <Header />
             <main className="container my-4">
@@ -60,12 +69,9 @@ function CheckOut() {
                     {/* Cart Items Section */}
                     <div className="col-lg-4 col-md-12 mb-4">
                         <h4 className="mb-3">Order Summary</h4>
-                        {cartedProducts?.products?.length === 0 ? (
-                            <p className="text-muted">No items in cart.</p>
-                        ) : (
                             <div className="row g-3">
                                 {cartedProducts?.products?.map((product) => (
-                                    <div>
+                                    <div key={product._id}>
                                         <div className="col" key={product._id}>
                                             <div className="card h-100">
                                                 <div className="row g-0 align-items-center">
@@ -93,12 +99,12 @@ function CheckOut() {
                                     </div>
                                 ))}
                             </div>
-                        )}
+                        
                     </div>
                     {/* Price Summary & Address */}
                     <div className="col-lg-4 col-md-12">
                         <div className="sticky-top" style={{ top: '80px' }}>
-                            <CartPrice />
+                            <CartPrice pageType="CheckOut" />
 
                             {/* Shipment Address */}
                             <div className="mt-4 p-3 border rounded">
@@ -119,6 +125,9 @@ function CheckOut() {
             <Header />
             {loading && <p>Loading...</p>}
             {error && <p>Error: {error.message}</p>}
+            <main className="container text-center my-5">
+                <b>Nothing is ordered</b>
+            </main>
         </>
     );
 }
