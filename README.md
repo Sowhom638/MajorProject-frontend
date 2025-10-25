@@ -1,16 +1,97 @@
-# React + Vite
+# E-Commerce App
+A e-commerce app where you can search products by category or name, we can filter the product list using category, We can add and remove product from cart and wishlist. We can increase and decrease number of item. We can also get notification for any action. We can see ordered history also.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Build with React frontend, Express/Node Backend, MongoDB database
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Demo Link
+[Live Demo](https://major-project-frontend-pi.vercel.app)
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Quick Start
+```
+git clone https://github.com/Sowhom638/MajorProject-frontend
+cd <your-repo>
+npm install
+npm run dev
+```
+---
 
-## Expanding the ESLint configuration
+## Technologies
+- React JS
+- React Router Dom
+- Bootstrap
+- Node JS
+- Express JS
+- MongoDB
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+## Demo Video
+Watch a walkthrough of all the major features in a demo vide0;
+[Google Drive Link]()
+
+---
+
+## Features
+
+**Home Page**
+
+    - A landing page with a list of featured categories.
+    - when you click on any one of the categories it will be redirected to the product list page with that selected category.
+
+**Product Listing Page**
+
+    - A product listing page where all the products are listed with a section of filters.
+    - Multiple filters on the product listing page including.
+        - Category: A checkbox with various categories according to the theme.
+        - Ratings: A slider for ratings.
+        - Price: A radio button to sort from low to high & high to low.
+    - A button to clear filters from where you can clear all the applied filters.
+
+**Product Details Page**
+
+    - If you click on any product you should be redirected to a single product page with all its details & the "Add to Cart" & "Add to Wishlist" buttons.
+
+**Wishlist Management**
+
+    - From the navbar, you can navigate to your wishlist where all the products that you liked and wish to buy in future are mentioned.
+    - On the product card,
+    - You can remove the item from the wishlist
+    - Add the item to the cart
+
+**Cart Management**
+
+    - From the navbar, you can navigate to the cart where all the products that you want to buy are mentioned.
+    - On the product card,
+    - You can see the quantity of a particular product.
+    - You can Increase or Decrease the quantity of a particular product.
+    - Remove the product from the cart
+    - Add the product to the Wishlist
+    - You can see the price details card of the cart containing a button to checkout which will show the total price of the products with its quantity.
+
+**Address Management**
+
+    - You can add multiple addresses, update or delete them.
+    - You can choose a single address to deliver the order.
+
+**Checkout**
+
+    Once you choose the address, you can click on the checkout button which would show the order summary and a message - "Order Placed Successfully." 
+
+**User Profile Page**
+
+    - You can see the user profile with details containing the name, email Id, phone number, address, etc. This data should be static.
+    - You Add new address from this page.
+    - You can see the order history from this page. Order History is all the orders placed previously.
+
+**Search**
+
+    You can search for an item by category or name from the product list via the input text box on the header navbar.
+
+---
+
+## API References
+
+**GET /products**
