@@ -172,4 +172,4 @@ Sample Response
 ---
 
 ## Contact
-for bugs informin or feature requesting , reach out to ghoshsowhom638@gmail.com
+for bugs informing or feature requesting , reach out to ghoshsowhom638@gmail.com
