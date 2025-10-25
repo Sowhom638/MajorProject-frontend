@@ -37,58 +37,53 @@ Watch a walkthrough of all the major features in a demo vide0;
 ## Features
 
 **Home Page**
-    - A landing page with a list of featured categories.
-    - when you click on any one of the categories it will be redirected 
-    to the product list page with that selected category.
+- A landing page with a list of featured categories.
+- when you click on any one of the categories it will be redirected to the product list page with that selected category.
 
 **Product Listing Page**
-    - A product listing page where all the products are listed with a section of filters.
-    - Multiple filters on the product listing page including.
-        - Category: A checkbox with various categories according to the theme.
-        - Ratings: A slider for ratings.
-        - Price: A radio button to sort from low to high & high to low.
-    - A button to clear filters from where you can clear all the applied filters.
+- A product listing page where all the products are listed with a section of filters.
+- Multiple filters on the product listing page including.
+    - Category: A checkbox with various categories according to the theme.
+    - Ratings: A slider for ratings.
+    - Price: A radio button to sort from low to high & high to low.
+- A button to clear filters from where you can clear all the applied filters.
 
 **Product Details Page**
-    - If you click on any product you should be redirected to a single 
-    product page with all its details & the "Add to Cart" & "Add to Wishlist" buttons.
+- If you click on any product you should be redirected to a single 
+product page with all its details & the "Add to Cart" & "Add to Wishlist" buttons.
 
 **Wishlist Management**
-    - From the navbar, you can navigate to your wishlist where all 
-    the products that you liked and wish to buy in future are mentioned.
-    - On the product card,
-    - You can remove the item from the wishlist
-    - Add the item to the cart
+- From the navbar, you can navigate to your wishlist where all the products that you liked and wish to buy in future are mentioned.
+    - On the product card, 
+        - You can remove the item from the wishlist 
+        - Add the item to the cart
 
 **Cart Management**
-    - From the navbar, you can navigate to the cart where all the products 
+- From the navbar, you can navigate to the cart where all the products 
     that you want to buy are mentioned.
-    - On the product card,
-    - You can see the quantity of a particular product.
-    - You can Increase or Decrease the quantity of a particular product.
-    - Remove the product from the cart
-    - Add the product to the Wishlist
-    - You can see the price details card of the cart containing a button to 
+- On the product card,
+- You can see the quantity of a particular product.
+- You can Increase or Decrease the quantity of a particular product.
+- Remove the product from the cart
+- Add the product to the Wishlist
+- You can see the price details card of the cart containing a button to 
     checkout which will show the total price of the products with its quantity.
 
 **Address Management**
-    - You can add multiple addresses, update or delete them.
-    - You can choose a single address to deliver the order.
+- You can add multiple addresses, update or delete them.
+- You can choose a single address to deliver the order.
 
 **Checkout**
     Once you choose the address, you can click on the checkout button which would 
     show the order summary and a message - "Order Placed Successfully." 
 
 **User Profile Page**
-    - You can see the user profile with details containing the name, email Id, phone 
-    number, address, etc. This data should be static.
-    - You Add new address from this page.
-    - You can see the order history from this page. Order History is all the orders 
-    placed previously.
+- You can see the user profile with details containing the name, email Id, phone number, address, etc.
+- You Add new address from this page.
+- You can see the order history from this page. Order History is all the orders placed previously.
 
 **Search**
-    You can search for an item by category or name from the product list via 
-    the input text box on the header navbar.
+You can search for an item by category or name from the product list via the input text box on the header navbar.
 
 ---
 
