@@ -121,14 +121,14 @@ Sample Response
 ```
 
 **GET /categories/:categoryId**
-Get address by id
+Get category by id
 Sample Response
 ```
 {_id , name, img, createdAt, updatedAt}
 ```
 
 **GET /categories**
-Get all addresses
+Get all categories
 Sample Response
 ```
 [
