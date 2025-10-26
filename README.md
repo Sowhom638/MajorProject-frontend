@@ -30,7 +30,7 @@ npm run dev
 ---
 ## Demo Video
 Watch a walkthrough of all the major features in a demo vide0;
-[Google Drive Link]()
+[Google Drive Link](https://drive.google.com/file/d/1JTekMMMNG286JvK__SjDumNUfp8K_Q1y/view?usp=sharing)
 
 ---
 
