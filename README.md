@@ -1,4 +1,4 @@
-# E-Commerce App
+# MyShoppingApp
 A e-commerce app where you can search products by category or name, we can filter the product list using category, We can add and remove product from cart and wishlist. We can increase and decrease number of item. We can also get notification for any action. We can see ordered history also.
 
 Build with React frontend, Express/Node Backend, MongoDB database
